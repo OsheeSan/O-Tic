@@ -12,11 +12,8 @@ struct MenuView: View {
     
     var body: some View {
         VStack{
-            Text("Welcome to O-Tic!")
+            Text("GameView!")
                 .font(.title).bold()
-            Button("Button title") {
-            }
-            .padding()
         }
         
     }
