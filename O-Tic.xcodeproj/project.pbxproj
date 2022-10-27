@@ -11,6 +11,8 @@
 		8455CD2A290AC71300C53C64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455CD29290AC71300C53C64 /* ContentView.swift */; };
 		8455CD2C290AC71500C53C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8455CD2B290AC71500C53C64 /* Assets.xcassets */; };
 		8455CD2F290AC71500C53C64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8455CD2E290AC71500C53C64 /* Preview Assets.xcassets */; };
+		8455CD37290AC79500C53C64 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455CD36290AC79500C53C64 /* MenuView.swift */; };
+		8455CD39290AC7A800C53C64 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455CD38290AC7A800C53C64 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		8455CD29290AC71300C53C64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8455CD2B290AC71500C53C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8455CD2E290AC71500C53C64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8455CD36290AC79500C53C64 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		8455CD38290AC7A800C53C64 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		8455CD26290AC71300C53C64 /* O-Tic */ = {
 			isa = PBXGroup;
 			children = (
+				8455CD35290AC76C00C53C64 /* Views */,
 				8455CD27290AC71300C53C64 /* O_TicApp.swift */,
 				8455CD29290AC71300C53C64 /* ContentView.swift */,
 				8455CD2B290AC71500C53C64 /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				8455CD2E290AC71500C53C64 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8455CD35290AC76C00C53C64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8455CD36290AC79500C53C64 /* MenuView.swift */,
+				8455CD38290AC7A800C53C64 /* GameView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8455CD2A290AC71300C53C64 /* ContentView.swift in Sources */,
+				8455CD37290AC79500C53C64 /* MenuView.swift in Sources */,
+				8455CD39290AC7A800C53C64 /* GameView.swift in Sources */,
 				8455CD28290AC71300C53C64 /* O_TicApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
