@@ -11,9 +11,17 @@ struct MenuView: View {
     
     
     var body: some View {
-        VStack{
+        VStack(spacing: 80){
             Text("GameView!")
                 .font(.title).bold()
+            VStack{
+                HStack{
+                }
+                HStack{
+                }
+                HStack{
+                }
+            }
         }
         
     }

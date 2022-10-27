@@ -29,13 +29,14 @@ struct ContentView: View {
                                 .font(.title).bold()
                                 .foregroundColor(.white)
                                 .padding()
-                            NavigationLink(destination: MenuView()){
+                            NavigationLink(destination: GameView()){
                                 Text("Start Game!")
                                     .padding()
                                     .frame(width: 150, height: 40, alignment: .center)
                                     .background(.orange)
                                     .cornerRadius(30)
                                     .foregroundColor(.white)
+                                    .bold().font(.title3)
                             }
                         }
                     }
