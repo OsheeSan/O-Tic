@@ -23,18 +23,34 @@ struct GameView: View {
             Text(whoseTurn == true ? "Player -> X" : "Player -> O")
                 .font(.title).bold()
             LazyVGrid(columns: columns, spacing: 40){
-                ForEach(0..<9){ i in
-                    Icon(img: moves[i]?.indicator ?? "")
-                        .onTapGesture {
-                            if v1 == v2 {
-                                if isIconEmpty(in: moves, forIndex: i){
-                                    moves[i] = Move(player: whoseTurn ? .player1 : .player2, boardIndex: i)
-                                    whoseTurn.toggle()
-                                    isThereIsWinner()
-                                    print(v1, v2, v3)
-                                }
+                if v1 == v2 {
+                    ForEach(0..<9){ i in
+                        Icon(img: moves[i]?.indicator ?? "")
+                            .onTapGesture {
+                                
+                                    if isIconEmpty(in: moves, forIndex: i){
+                                        moves[i] = Move(player: whoseTurn ? .player1 : .player2, boardIndex: i)
+                                        whoseTurn.toggle()
+                                        isThereIsWinner()
+                                        print(v1, v2, v3)
+                                    }
+                                
                             }
+                    }
+                } else {
+                    ForEach(0..<9){ i in
+                        if (i == v1 || i == v2 || i == v3) && v1 != v2 {
+                            Icon(img: moves[i]?.indicator ?? "")
+                                .frame()
+                                .padding(3.2)
+                                .background(.green)
+                                .cornerRadius(10)
+                        } else {
+                            Icon(img: moves[i]?.indicator ?? "")
                         }
+                        
+                            
+                    }
                 }
             }
         }
