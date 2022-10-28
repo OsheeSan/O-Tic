@@ -16,7 +16,7 @@ struct GameView: View {
     
     var body: some View {
         VStack(spacing: 80){
-            Text("GameView!")
+            Text(whoseTurn == true ? "Player -> X" : "Player -> O")
                 .font(.title).bold()
             LazyVGrid(columns: columns, spacing: 40){
                 ForEach(0..<9){ i in
