@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    @State var whichView = "MenuView"
-    
+struct ContentView: View {    
     var body: some View {
             NavigationView{
                 ZStack{
