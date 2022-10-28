@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
             NavigationView{
                 ZStack{
-                    Color.black
-                        .ignoresSafeArea()
+//                    Color.black
+//                        .ignoresSafeArea()
                     VStack(spacing: 50){
                         Image(systemName: "xmark.circle")
                                         .font(.system(size: 100))
@@ -24,7 +24,6 @@ struct ContentView: View {
                         VStack{
                             Text("Welcome to O-Tic!")
                                 .font(.title).bold()
-                                .foregroundColor(.white)
                                 .padding()
                             NavigationLink(destination: GameView()){
                                 Text("Start Game!")

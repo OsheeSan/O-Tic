@@ -12,7 +12,6 @@
 		8455CD2C290AC71500C53C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8455CD2B290AC71500C53C64 /* Assets.xcassets */; };
 		8455CD2F290AC71500C53C64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8455CD2E290AC71500C53C64 /* Preview Assets.xcassets */; };
 		8455CD39290AC7A800C53C64 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455CD38290AC7A800C53C64 /* GameView.swift */; };
-		845C0977290BFC59004E5E71 /* LocalGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C0976290BFC59004E5E71 /* LocalGame.swift */; };
 		845C0979290C0A76004E5E71 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C0978290C0A76004E5E71 /* Icon.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +22,6 @@
 		8455CD2B290AC71500C53C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8455CD2E290AC71500C53C64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8455CD38290AC7A800C53C64 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		845C0976290BFC59004E5E71 /* LocalGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGame.swift; sourceTree = "<group>"; };
 		845C0978290C0A76004E5E71 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 		845C0973290BFBC0004E5E71 /* Mech */ = {
 			isa = PBXGroup;
 			children = (
-				845C0976290BFC59004E5E71 /* LocalGame.swift */,
 			);
 			path = Mech;
 			sourceTree = "<group>";
@@ -174,7 +171,6 @@
 				8455CD2A290AC71300C53C64 /* ContentView.swift in Sources */,
 				8455CD39290AC7A800C53C64 /* GameView.swift in Sources */,
 				8455CD28290AC71300C53C64 /* O_TicApp.swift in Sources */,
-				845C0977290BFC59004E5E71 /* LocalGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
