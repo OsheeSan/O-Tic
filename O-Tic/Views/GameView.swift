@@ -20,21 +20,32 @@ struct GameView: View {
     
     var body: some View {
         VStack(spacing: 80){
-            Text(whoseTurn == true ? "Player -> X" : "Player -> O")
-                .font(.title).bold()
+            if !isThereAWinner() {
+                Text(whoseTurn == true ? "Player -> X" : "Player -> O")
+                    .font(.title).bold()
+            }
+            if isThereAWinner() {
+                VStack(spacing: 30){
+                    Text("WINNER!")
+                        .font(.title).bold()
+                        .frame(width: 200)
+                        .background(.orange)
+                        .cornerRadius(30)
+                    Text(whoseTurn == true ? "Player -> O" : "Player -> X")
+                        .font(.title).bold()
+                }
+            }
             LazyVGrid(columns: columns, spacing: 40){
-                if v1 == v2 {
+                if !isThereAWinner() {
                     ForEach(0..<9){ i in
                         Icon(img: moves[i]?.indicator ?? "")
                             .onTapGesture {
-                                
                                     if isIconEmpty(in: moves, forIndex: i){
                                         moves[i] = Move(player: whoseTurn ? .player1 : .player2, boardIndex: i)
                                         whoseTurn.toggle()
-                                        isThereIsWinner()
+                                        findAWinner()
                                         print(v1, v2, v3)
                                     }
-                                
                             }
                     }
                 } else {
@@ -57,7 +68,11 @@ struct GameView: View {
         return !moves.contains(where: {$0?.boardIndex == index})
     }
     
-    func isThereIsWinner(){
+    func isThereAWinner() -> Bool{
+        return v1 != v2
+    }
+    
+    func findAWinner(){
         if (moves[0]?.indicator == moves[1]?.indicator) && (moves[2]?.indicator == moves[0]?.indicator) && moves[0]?.indicator != nil{
             v1 = 0
             v2 = 1
