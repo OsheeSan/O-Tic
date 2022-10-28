@@ -41,15 +41,12 @@ struct GameView: View {
                     ForEach(0..<9){ i in
                         if (i == v1 || i == v2 || i == v3) && v1 != v2 {
                             Icon(img: moves[i]?.indicator ?? "")
-                                .frame()
                                 .padding(3.2)
                                 .background(.green)
                                 .cornerRadius(10)
                         } else {
                             Icon(img: moves[i]?.indicator ?? "")
                         }
-                        
-                            
                     }
                 }
             }
@@ -117,8 +114,6 @@ struct Move{
         return player == .player1 ? "xmark" : "circle"
     }
 }
-
-
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
