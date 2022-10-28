@@ -33,7 +33,7 @@ struct GameView: View {
     }
     
     func isIconEmpty(in moves: [Move?], forIndex index: Int) -> Bool{
-        return moves.contains(where: {$0?.boardIndex == index})
+        return !moves.contains(where: {$0?.boardIndex == index})
     }
     
 }
