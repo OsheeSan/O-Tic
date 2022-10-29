@@ -19,49 +19,79 @@ struct GameView: View {
     @State var v3 = 0
     
     var body: some View {
+            
         VStack(spacing: 80){
-            if !isThereAWinner() {
-                Text(whoseTurn == true ? "Player -> X" : "Player -> O")
+            if isItDraw() {
+                Text("DRAW!")
                     .font(.title).bold()
-            }
-            if isThereAWinner() {
-                VStack(spacing: 30){
-                    Text("WINNER!")
+                    .frame(width: 200)
+                    .background(.orange)
+                    .cornerRadius(30)
+            } else {
+                if !isThereAWinner() {
+                    Text(whoseTurn == true ? "Player -> X" : "Player -> O")
                         .font(.title).bold()
-                        .frame(width: 200)
-                        .background(.orange)
-                        .cornerRadius(30)
-                    Text(whoseTurn == true ? "Player -> O" : "Player -> X")
-                        .font(.title).bold()
+                }
+                if isThereAWinner() {
+                    withAnimation(){
+                        VStack(spacing: 30){
+                            Text("WINNER!")
+                                .font(.title).bold()
+                                .frame(width: 200)
+                                .background(.orange)
+                                .cornerRadius(30)
+                            Text(whoseTurn == true ? "Player -> O" : "Player -> X")
+                                .font(.title).bold()
+                        }
+                    }
+                    
                 }
             }
             LazyVGrid(columns: columns, spacing: 40){
-                if !isThereAWinner() {
+                if !isThereAWinner() && !isItDraw() {
                     ForEach(0..<9){ i in
-                        Icon(img: moves[i]?.indicator ?? "")
-                            .onTapGesture {
-                                    if isIconEmpty(in: moves, forIndex: i){
-                                        moves[i] = Move(player: whoseTurn ? .player1 : .player2, boardIndex: i)
-                                        whoseTurn.toggle()
-                                        findAWinner()
-                                        print(v1, v2, v3)
-                                    }
-                            }
-                    }
-                } else {
-                    ForEach(0..<9){ i in
-                        if (i == v1 || i == v2 || i == v3) && v1 != v2 {
-                            Icon(img: moves[i]?.indicator ?? "")
-                                .padding(3.2)
-                                .background(.green)
-                                .cornerRadius(10)
-                        } else {
+                        withAnimation(){
                             Icon(img: moves[i]?.indicator ?? "")
                         }
+                            .onTapGesture {
+                                withAnimation(){
+                                if isIconEmpty(in: moves, forIndex: i){
+                                    moves[i] = Move(player: whoseTurn ? .player1 : .player2, boardIndex: i)
+                                    whoseTurn.toggle()
+                                    findAWinner()
+                                    print(v1, v2, v3)
+                                }
+                            }
+                            }
+                    }
+                } else if isThereAWinner() {
+                    ForEach(0..<9){ i in
+                        if (i == v1 || i == v2 || i == v3) && v1 != v2 {
+                            withAnimation(){
+                                Icon(img: moves[i]?.indicator ?? "")
+                                    .padding(3.2)
+                                    .background(.green)
+                                    .cornerRadius(10)
+                            }
+                        } else {
+                            withAnimation(){
+                                Icon(img: moves[i]?.indicator ?? "")
+                            }
+                        }
+                    }
+                } else if isItDraw() {
+                    ForEach(0..<9){ i in
+                            withAnimation(){
+                                Icon(img: moves[i]?.indicator ?? "")
+                                    .padding(3.2)
+                                    .background(.orange)
+                                    .cornerRadius(10)
+                            }
                     }
                 }
             }
         }
+        .navigationTitle("GAME")
     }
     
     func isIconEmpty(in moves: [Move?], forIndex index: Int) -> Bool{
@@ -70,6 +100,15 @@ struct GameView: View {
     
     func isThereAWinner() -> Bool{
         return v1 != v2
+    }
+    
+    func isItDraw() -> Bool{
+        for i in moves {
+            if i?.indicator == nil {
+                return false
+            }
+        }
+        return true
     }
     
     func findAWinner(){
